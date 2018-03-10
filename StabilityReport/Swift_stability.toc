@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Nomenclature and Axes}{2}
+\contentsline {section}{\numberline {3}Analysis}{2}
+\contentsline {subsection}{\numberline {3.1}2D section computations}{2}
+\contentsline {subsubsection}{\numberline {3.1.1}Hinge Moments}{3}
+\contentsline {subsection}{\numberline {3.2}3D Computations}{4}
+\contentsline {subsubsection}{\numberline {3.2.1}LinAir Method}{4}
+\contentsline {subsubsection}{\numberline {3.2.2}XFLR5 Method}{5}
+\contentsline {subsubsection}{\numberline {3.2.3}Comparison of methods}{7}
+\contentsline {section}{\numberline {4}Dynamic Analysis - Work in Progress ....}{7}
+\contentsline {section}{\numberline {5}Conclusion}{8}
+\contentsline {section}{\numberline {A}XFLR5 look-up tables}{9}
+\contentsline {subsection}{\numberline {A.1}$\delta _{f1} = 0$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f1f2\_0)}{9}
+\contentsline {subsection}{\numberline {A.2}$\delta _{f1} = -20^o$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f1\_-20)}{9}
+\contentsline {subsection}{\numberline {A.3}$\delta _{f1} = +20^o$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f1\_+20)}{10}
+\contentsline {subsection}{\numberline {A.4}$\delta _{f1} = +30^o$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f1\_+30)}{10}
+\contentsline {subsection}{\numberline {A.5}$\delta _{f1} = 0$ , $\delta _{f2} = -20^o$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f2\_-20)}{11}
+\contentsline {subsection}{\numberline {A.6}$\delta _{f1} = 0$ , $\delta _{f2} = +20^o$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f2\_+20)}{11}
+\contentsline {subsection}{\numberline {A.7}$\delta _{f1} = 0$ , $\delta _{f2} = +30^o$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =0$ (f2_+30)}{12}
+\contentsline {subsection}{\numberline {A.8}$\delta _{f1} = 0$ , $\delta _{f2} = 0$ , $\delta _{a1} = +20^o$, $\delta _{a2} = 0$ , $\beta =0$ (a1\_+20)}{12}
+\contentsline {subsection}{\numberline {A.9}$\delta _{f1} = 0$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = +20^o$ , $\beta =0$ (a2\_+20)}{13}
+\contentsline {subsection}{\numberline {A.10}$\delta _{f1} = 0$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =-4^o$ (beta\_4)}{13}
+\contentsline {subsection}{\numberline {A.11}$\delta _{f1} = 0$ , $\delta _{f2} = 0$ , $\delta _{a1} = 0$, $\delta _{a2} = 0$ , $\beta =-8^o$ (beta\_8)}{13}
+\contentsline {section}{\numberline {B}Matlab script for XFLR5 data}{15}
+\contentsline {subsection}{\numberline {B.1}Comparison of Linearized data with Look-up tables}{15}
+\contentsline {section}{\numberline {C}LinAir Input File and Results}{20}

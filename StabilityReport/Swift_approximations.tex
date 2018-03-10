@@ -1,0 +1,90 @@
+\documentclass[titlepage,10pt]{article}
+\usepackage{textcomp}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{moreverb}
+\def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}
+
+
+\begin{document}
+\title{
+SWIFT Stability and Control Derivatives Computations \\
+}
+
+\author{Zouhair Mahboubi}
+
+\date{December 5$^{th}$, 2009\\ Stanford University}
+
+\maketitle
+\newpage
+
+\section{Introduction}
+In this report, we summarize the approach use to derive the stability and control derivatives for the Swift UAV. We present two methods and cross-compare the results. Overall we find good agreement between the two approaches, which bolsters our confidence in the results. The complete results and input files are given in the appendix.
+
+
+\section{Analysis}
+\subsection{2D section computations}
+Using the 3D CAD representation of the Swift airplane, we extracted 5 representative airfoil sections that we have used for analysis. Four of the sections were chosen at the control surface breaks in the spanwise direction for convenience, and the 5th one mid-span of the winglet.\\
+We then used XFLR5 (a gui-interface for Xfoil, among other things) to compute the drag polars for the sections. These computations assumed viscous flow, with a forced transition at 25\% of the chord (the Swift has a transition tape on its  surface) and for a range of Reynolds Numbers. For the wing sections, we also carried computations with a deflected flap at different angles in order to find the effect on the section lift-coefficient and aerodynamic moment.
+
+\subsubsection{Hinge Moments}
+In order to size the actuators, hinge moments computations we necessary. Again, using Xfoil we computed the maximum expected hinge-moment coefficients. These were obtained by using up to $40^o$ deflections for the flaps and $20^o$ for the ailevons at angle of attacks past-stall (Stall causes hinge-moments to be higher). Using the surface area for each section, we converted these to moments using the worst case scenario of flying at the $V_ne$.
+
+
+\subsection{3D Computations}
+\subsubsection{LinAir Method}
+We model the aircraft in LinAir, which solves an irrotational, inviscid, linearized flow around the airplane. The model we use is simplified in that we only make use of the root and tip sections. LinAir has the option of specifying 2D section properties, so we use the results obtained by XFoil at a representative Reynolds Number. The input file is given in the appendix.
+
+\subsubsection{XFLR5 Method}
+Aside from Xfoil, XFLR5 also has an implementation of a Vortex-Lattice method similar to LinAir. But because it's able to compute the 2D section properties using Xfoil, it's relatively straightforward to add more spanwise 2D sections. Moreover, it is easy to deflect a section's trailing edge to model flap or ailevon deflections. However, the disadvantage is that it does not directly give the stability and control derivatives, nor does it handle roll, pitch and yaw rates (p, q and r) while LinAir does.\\
+
+So our approach was to generate look-up tables of lift, drag and side force coefficients as well as  pitch, roll and yaw moment coefficients. We then imported the data in Matlab, and assuming linear behaviour when appropriate (quadratic for drag) we used least-squares to approximate the derivatives. 
+
+Let's take the lift-coefficient as an example, we know that in general $CL = CL_0 + CL_{\alpha} \alpha + CL_{\delta_{f}} * \delta_f$. So if we have a look-up from $\alpha$ and $\delta_f$ to $CL$, we can write this in vector form as $\left[CL\right]_i =  \left[1 \alpha_i  (\delta_f)_i  \right] \left[ CL_0 CL_{\alpha} CL_{\delta_{f}}\right]^T$. If we stack all of the $\left[1 \alpha_i  (\delta_f)_i  \right]$ in a matrix, it is then possible to use least-squares to estimate the $\left[ CL_0 CL_{\alpha} CL_{\delta_{f}}\right]$. A similar approach can be done for pitching moment, rolling moment, etc. It's worth mentioning that we assume longitudinal and lateral coefficients are decoupled (i.e. Rolling moment only depends on ailevon deflections and side-slip, and not angle of attack or flap deflections). Given that the vortex-lattice method is linear, we expect that linearizing the data should yield good results, and plots included in the appendix confirm this. The Matlab script used to extract these coefficients is also included in the appendix. 
+
+
+\section{Analysis}
+\subsection{Methods}
+We use two approaches to obtain the phugoid and short period. In one case, we start by extracting 2D sections from the CAD drawings of the wing, and we use Xfoil to compute 2D section properties ($Cl_\alpha$, $Cm_0$, etc.) We then feed these values to LinAir which we use to compute some of the stability derivatives as well as the eigen values of the dynamic system.\\
+
+In the second approach we use 'back-of-the-envelope' computations from approximations given by 'Etkin' \cite{Etkin} for the phugoid and short period frequencies. The necessary aerodynamic coefficients were computed by John Melton using a NS code. A matlab script used to do the 'back-of-the-envelope' is included in appendix and lists all the reference values and flight conditions assumed.
+\subsubsection{Approximations of modes}
+We use the approximations of the modes as outlined in equations 6.3,12 and 6.3,15 of \cite{Etkin}. These are given in terms of aerodynamic coefficients and stability derivatives as well as other non-dimensional quantities summarized in tables 4.1, 4.2 and 4.4 of \cite{Etkin}.
+\paragraph{Phugoid} $ {w_n} = \frac{2\pi}{T_n} \mbox{ where } T_n = \pi\sqrt{2}\frac{u_0}{g} $ , $ \zeta =  \frac{C_D}{C_L} $
+
+\paragraph{Short Period}
+$$ {w_n}^2 = - \frac{1}{{t^*}^2 \hat{I}_y} (C_{m_\alpha} - \frac{C_{m_q} C_{z_\alpha}}{2 \mu} ) $$
+$$ \zeta =  \frac{B}{2 w_n} \mbox{ where } B = -\frac{1}{t^*} \left[	
+ 								\frac{C_{z_\alpha}}{2 \mu} + 
+ 								\frac{C_{m_q} + C_{m_{\dot{\alpha}}} }{\hat{I}_y}
+ 								 \right] $$
+ 								 
+ 								 
+\subsection{Results}
+These are the results obtained from the two methods. The computed values are different mainly because LinAir is computing somewhat different stability derivatives.\\
+
+For the moment being the approximations from 'Etkin' are probably more accurate since it's not certain that the wing is properly modeled in LinAir. However, once it is we should obtain more similar results.
+
+\subsubsection{Approximation from 'Etkin'}
+Phugoid     :  frequency = 0.99 rad/s,  damping = 0.05 \\
+Short period:  frequency = 6.25rad/s, damping = 0.25 
+\subsubsection{LinAir}
+Phugoid     :  frequency = 0.51 rad/s,  damping = 0.16 \\
+Short period:  frequency = 12.55 rad/s, damping = 0.83 
+
+\newpage
+\appendix
+\section{Matlab script}
+\verbatimtabinput[8]{Swift.m}
+
+\begin{thebibliography}{9}
+\bibitem{Etkin}
+  Etkin B. Reid L.,
+  Dynamics of Flight: Stability and Control
+  3rd Edition.
+  1996.
+  
+  
+\end{thebibliography}
+\end{document}

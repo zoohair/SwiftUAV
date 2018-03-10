@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="linair.xsl" ?>
+<linair>
+<controls>
+<var name="lastmodified"><val>Dec 6, 2009 3:15:17 PM</val></var>
+<var name="lastupdated"><val>Dec 6, 2009 3:43:10 PM</val></var>
+<var name="status"><val>complete</val></var>
+<var name="comment1"><val>AA241 LinAir XML Database Example</val></var>
+<var name="comment2"><val>Try StabilityDerivatives or la4sub or LinearDynamics as mainClass below for batch mode.</val></var>
+<var name="comment3"><val>In Linair alpha, beta in deg, but derivatives per rad.</val></var>
+<var name="comment4"><val>Dynamics reads weight in lb, Ixx in sl ft^2, altitude in ft</val></var>
+<class name="mainClass"><val>StabilityDerivatives</val></class>
+<class name="objectiveClass"><val>la4sub</val></class>
+</controls>
+<inputs>
+<var name="configurationname"><val>LinAir Geometry</val></var>
+<var name="sectionClass"><val>lasection</val></var>
+<var name="sref"><val>141.0</val></var>
+<var name="bref"><val>39.4</val></var>
+<var name="cref"><val>3.47</val></var>
+<var name="xref"><val>3.9</val></var>
+<var name="yref"><val>0.0</val></var>
+<var name="zref"><val>0.0</val></var>
+<var name="nelem"><val>2.0001</val></var>
+<var name="alpha"><val>-1.5</val></var>
+<var name="beta"><val>0.0</val></var>
+<var name="phat"><val>0.0</val></var>
+<var name="qhat"><val>0.0</val></var>
+<var name="rhat"><val>0.0</val></var>
+<var name="mach"><val>0.1</val></var>
+<var name="wakelocation"><val>1.0</val></var>
+<var name="reflectgeometry"><val>1.0</val></var>
+<var name="ElementName"><val>wing</val><val>tip</val></var>
+<var name="xrootle"><val>0.0</val><val>7.28</val></var>
+<var name="yrootle"><val>0.0</val><val>19.35</val></var>
+<var name="zrootle"><val>0.0</val><val>-0.3608</val></var>
+<var name="xrootte"><val>4.1</val><val>10.37</val></var>
+<var name="xtiple"><val>7.28</val><val>9.74</val></var>
+<var name="ytiple"><val>19.35</val><val>19.35</val></var>
+<var name="ztiple"><val>-0.3608</val><val>3.6</val></var>
+<var name="xtipte"><val>10.37</val><val>11.22</val></var>
+<var name="rooti"><val>10.0</val><val>0.0</val></var>
+<var name="tipi"><val>0.0</val><val>0.0</val></var>
+<var name="npan"><val>25.0001</val><val>4.0001</val></var>
+<var name="cdp0root"><val>0.0030</val><val>0.02</val></var>
+<var name="cdp1root"><val>0.0</val><val>0.0</val></var>
+<var name="cdp2root"><val>0.02</val><val>0.0030</val></var>
+<var name="cl0root"><val>0.3</val><val>0.2</val></var>
+<var name="cm0root"><val>-0.0346</val><val>0.0</val></var>
+<var name="clmaxroot"><val>1.4</val><val>1.5</val></var>
+<var name="cdp0tip"><val>0.0030</val><val>0.02</val></var>
+<var name="cdp1tip"><val>0.0</val><val>0.0</val></var>
+<var name="cdp2tip"><val>0.02</val><val>0.0030</val></var>
+<var name="cl0tip"><val>0.3</val><val>0.2</val></var>
+<var name="cm0tip"><val>-0.0017</val><val>0.0</val></var>
+<var name="clmaxtip"><val>1.4</val><val>1.5</val></var>
+<var name="designVars"><val>alpha</val></var>
+<var name="designVarMin"><val>0.0</val></var>
+<var name="designVarMax"><val>10.0</val></var>
+<var name="constraintVars"><val>CL</val></var>
+<var name="constraintVarMin"><val>0.99</val></var>
+<var name="constraintVarMax"><val>1.01</val></var>
+<var name="objectiveName"><val>CD</val></var>
+<var name="objectiveMin"><val>0.0</val></var>
+<var name="objectiveMax"><val>0.1</val></var>
+<var name="maxIterations"><val>100.0001</val></var>
+<var name="weight"><val>330.0</val></var>
+<var name="Ixx"><val>650.0</val></var>
+<var name="Iyy"><val>71.0</val></var>
+<var name="Izz"><val>730.0</val></var>
+<var name="Ixz"><val>0.0</val></var>
+<var name="Ixy"><val>0.0</val></var>
+<var name="Iyz"><val>0.0</val></var>
+<var name="theta"><val>0.0</val></var>
+<var name="altitude"><val>0.0</val></var>
+<var name="CL_alpha"><val>4.998975780061197</val></var>
+<var name="CD_alpha"><val>0.2624248209206782</val></var>
+<var name="Cm_alpha"><val>-0.7124777681738902</val></var>
+<var name="CL_qhat"><val>6.215114433501478</val></var>
+<var name="CD_qhat"><val>0.24211897044581002</val></var>
+<var name="Cm_qhat"><val>-3.138796527581909</val></var>
+<var name="CL_adot"><val>0.0</val></var>
+<var name="CD_adot"><val>0.0</val></var>
+<var name="Cm_adot"><val>0.0</val></var>
+<var name="Cy_beta"><val>-0.42973793947306094</val></var>
+<var name="Cr_beta"><val>-0.13328061366217617</val></var>
+<var name="Cn_beta"><val>0.04690963166812743</val></var>
+<var name="Cy_phat"><val>-0.18066262567282954</val></var>
+<var name="Cr_phat"><val>-0.629668621305802</val></var>
+<var name="Cn_phat"><val>-0.0027563449427813495</val></var>
+<var name="Cy_rhat"><val>0.1937053606227721</val></var>
+<var name="Cr_rhat"><val>0.163550046699199</val></var>
+<var name="Cn_rhat"><val>-0.03024330569973568</val></var>
+</inputs>
+<results>
+<var name="CL"><val>0.5976778715390629</val></var>
+<var name="CD"><val>0.02369715820877953</val></var>
+<var name="Cm"><val>-0.005030289776019905</val></var>
+<var name="RealEig"><val>-3.677461243777071</val><val>-3.677461243777071</val><val>0.017869135247267076</val><val>0.017869135247267076</val><val>-0.34100886144162423</val><val>-0.34100886144162423</val><val>0.051675788605295536</val><val>-7.337156531993002</val><val>6.8408278174059145E-15</val></var>
+<var name="ImagEig"><val>3.8630280903221776</val><val>-3.8630280903221776</val><val>0.6326100962682438</val><val>-0.6326100962682438</val><val>1.3144846067405966</val><val>-1.3144846067405966</val><val>0.0</val><val>0.0</val><val>0.0</val></var>
+<var name="VectorString"><val>
+Normalized, dimensionless eigenvectors.
+       (magnitude only)
+Variable             Mode #
+        1              2              3             4               5               6              7              8               9
+Longitudinal motions
+u     0.0955         0.0955         0.8710         0.8710         6.3270E-15     6.3270E-15     3.9847E-16     1.2141E-15     4.3454E-29  
+w     1.0            1.0            0.1228         0.1228         5.6897E-15     5.6897E-15     2.8881E-16     1.4084E-14     2.7813E-22  
+q     0.1448         0.1448         0.0191         0.0191         2.8322E-16     2.8322E-16     1.8820E-19     1.5355E-15     -5.4765E-20 
+tha   0.8985         0.8985         1.0            1.0            8.4818E-15     8.4818E-15     5.2387E-16     6.8578E-15     1.0995E-18  
+
+Lateral motions
+v     1.7081E-16     1.7081E-16     3.5509E-16     3.5509E-16     0.7553         0.7553         0.0134         0.0188         1.3924E-15  
+p     1.5453E-16     1.5453E-16     3.1756E-16     3.1756E-16     0.6528         0.6528         0.0062         1.0            4.2218E-16  
+r     5.2313E-17     5.2313E-17     2.6697E-16     2.6697E-16     1.0            1.0            0.0634         6.0136E-4      8.8715E-15  
+phi   8.0050E-18     8.0050E-18     1.4186E-16     1.4186E-16     0.5995         0.5995         1.0            6.6732E-5      1.0         
+psi   2.2546E-17     2.2546E-17     1.9096E-16     1.9096E-16     0.3914         0.3914         0.0985         0.1109         1.2808E-14  </val></var>
+</results>
+</linair>
